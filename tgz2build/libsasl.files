@@ -1,0 +1,3 @@
+opt/syslog-ng/lib/*.s[l,o]*
+opt/syslog-ng/lib/sasl2/*.s[l,o]*
+opt/syslog-ng/lib/*.a

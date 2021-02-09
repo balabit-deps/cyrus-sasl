@@ -1,0 +1,9 @@
+name: libsasl2
+builder:
+  name: BalabitBuilder
+  environments:
+    NOCONFIGURE: "1"
+  configure_options: 
+  flags: "out-of-tree-build-incompatible"
+platforms:
+  - linux-glibc2.11/amd64
