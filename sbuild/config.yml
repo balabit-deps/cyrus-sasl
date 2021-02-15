@@ -3,7 +3,7 @@ builder:
   name: BalabitBuilder
   environments:
     NOCONFIGURE: "1"
-  configure_options: 
+  configure_options: "--with-saslauthd=no"
   flags: "out-of-tree-build-incompatible"
 platforms:
   - linux-glibc2.11/amd64

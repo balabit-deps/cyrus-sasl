@@ -11,6 +11,6 @@ export LDFLAGS="-L/opt/syslog-ng/lib"
 export NOCONFIGURE=1
 
 ./autogen.sh
-./configure --prefix=/opt/syslog-ng/ 
+./configure --prefix=/opt/syslog-ng/ --with-saslauthd=no
 make all
 make DESTDIR=`pwd`/artifacts/=install/ install
