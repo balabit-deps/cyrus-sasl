@@ -27,9 +27,10 @@ build-libsasl:
     - export VERSION=2.1.27-1.syslogng70
     - export DIST=linux-glibc2.11
     - export ARCH=amd64
+    - ./git-use-gitlab-credentials.sh
   script:
     - cp -f sources.py /usr/src/zbs/lib/
-    - git clone https://git.balabit/syslog-ng/pe-builder-image.git
+    - git clone git@git.balabit:syslog-ng/pe-builder-image.git
     - if [ ! -z "$RELEASE_VERSION" ]; then export SNAPSHOT=no ; fi
     - if [ "$SNAPSHOT" = "yes" ]; then export SNAPSHOT_VERSION=$(date +'%Y%m%d+%H%M'); export VERSION="${VERSION}+${SNAPSHOT_VERSION}"; fi
     - if [ "$SNAPSHOT" = "no" ]; then export VERSION="$RELEASE_VERSION"; fi
