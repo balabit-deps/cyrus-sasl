@@ -1,0 +1,21 @@
+source="libsasl"
+version=2.1.27-pe-1
+dependencies=(
+  'libssl' 'libssl-dev'
+  'libkrb5' 'libkrb5-dev'
+  'zlib' 'zlib-dev'
+)
+
+bootstrap() {
+  NOCONFIGURE=1 ./autogen.sh
+}
+
+build() {
+  # doesn't support out-of-tree build
+  ./configure --prefix="${prefix}" --with-saslauthd=no
+  make all
+}
+
+install() {
+  make DESTDIR="${dest_dir}" install
+}
